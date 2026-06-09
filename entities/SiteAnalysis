@@ -1,0 +1,119 @@
+{
+  "name": "SiteAnalysis",
+  "type": "object",
+  "properties": {
+    "url": {
+      "type": "string",
+      "description": "The website URL that was analyzed"
+    },
+    "aeo_score": {
+      "type": "number",
+      "description": "Overall AI Engine Optimization score (0-100)"
+    },
+    "total_citations": {
+      "type": "number",
+      "description": "Total number of estimated citations across all LLMs"
+    },
+    "llms_found": {
+      "type": "number",
+      "description": "Number of LLMs that cite this domain"
+    },
+    "sentiment_score": {
+      "type": "number",
+      "description": "Overall sentiment percentage (0-100)"
+    },
+    "llm_results": {
+      "type": "array",
+      "description": "Per-LLM analysis results",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "visibility_pct": {
+            "type": "number"
+          },
+          "citations": {
+            "type": "number"
+          },
+          "sentiment": {
+            "type": "string"
+          },
+          "trend": {
+            "type": "string"
+          },
+          "color": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "ranked_prompts": {
+      "type": "array",
+      "description": "Prompts where the site is mentioned/ranked",
+      "items": {
+        "type": "object",
+        "properties": {
+          "prompt": {
+            "type": "string"
+          },
+          "llm": {
+            "type": "string"
+          },
+          "position": {
+            "type": "number"
+          },
+          "context": {
+            "type": "string"
+          },
+          "sentiment": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "optimizations": {
+      "type": "array",
+      "description": "Recommended optimizations to improve AI visibility",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "priority": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "category": {
+            "type": "string"
+          },
+          "impact": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "analyzing",
+        "completed",
+        "failed"
+      ],
+      "default": "pending"
+    }
+  },
+  "required": [
+    "url"
+  ]
+}

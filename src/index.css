@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=Epilogue:ital,wght@0,300;0,400;0,500;0,700;1,300&family=JetBrains+Mono:wght@300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 260 50% 3%;
+    --foreground: 260 60% 95%;
+    --card: 260 40% 8%;
+    --card-foreground: 260 60% 95%;
+    --popover: 260 40% 6%;
+    --popover-foreground: 260 60% 95%;
+    --primary: 75 88% 61%;
+    --primary-foreground: 260 50% 3%;
+    --secondary: 260 30% 12%;
+    --secondary-foreground: 260 60% 95%;
+    --muted: 260 20% 14%;
+    --muted-foreground: 260 30% 55%;
+    --accent: 252 100% 71%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 260 20% 12%;
+    --input: 260 20% 14%;
+    --ring: 75 88% 61%;
+    --chart-1: 75 88% 61%;
+    --chart-2: 252 100% 71%;
+    --chart-3: 187 92% 53%;
+    --chart-4: 330 81% 73%;
+    --chart-5: 43 74% 66%;
+    --radius: 0.75rem;
+    --font-heading: 'Familjen Grotesk', ui-sans-serif, system-ui, sans-serif;
+    --font-body: 'Epilogue', ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'Familjen Grotesk', ui-sans-serif, system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    --sidebar-background: 260 40% 5%;
+    --sidebar-foreground: 260 30% 55%;
+    --sidebar-primary: 252 100% 71%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 260 30% 12%;
+    --sidebar-accent-foreground: 260 60% 95%;
+    --sidebar-border: 260 20% 12%;
+    --sidebar-ring: 75 88% 61%;
+  }
+
+  .dark {
+    --background: 260 50% 3%;
+    --foreground: 260 60% 95%;
+    --card: 260 40% 8%;
+    --card-foreground: 260 60% 95%;
+    --popover: 260 40% 6%;
+    --popover-foreground: 260 60% 95%;
+    --primary: 75 88% 61%;
+    --primary-foreground: 260 50% 3%;
+    --secondary: 260 30% 12%;
+    --secondary-foreground: 260 60% 95%;
+    --muted: 260 20% 14%;
+    --muted-foreground: 260 30% 55%;
+    --accent: 252 100% 71%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 260 20% 12%;
+    --input: 260 20% 14%;
+    --ring: 75 88% 61%;
+    --chart-1: 75 88% 61%;
+    --chart-2: 252 100% 71%;
+    --chart-3: 187 92% 53%;
+    --chart-4: 330 81% 73%;
+    --chart-5: 43 74% 66%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: hsl(260 50% 3%); }
+::-webkit-scrollbar-thumb { background: hsl(260 20% 18%); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: hsl(260 20% 25%); }
+
+/* Marquee animation */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* Pulse glow */
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+
+/* Float animation */
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Blink dot */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
